@@ -52,7 +52,7 @@ namespace sfh
 
     public:
         // Used to write a std::vector containing user defined datatype
-        // Be aware of pointers in your class
+        // Be aware of pointers in your class 
         template<class T>
         JM_DLL_OUT void WriteCollection(std::vector<T*> types)
         {
