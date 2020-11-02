@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\Extern">
       <UniqueIdentifier>{f66264df-2243-4816-afad-6cdef509d5e9}</UniqueIdentifier>
     </Filter>
@@ -21,6 +17,10 @@
     </Filter>
     <Filter Include="Header Files\Format Decoders\Dr Flac">
       <UniqueIdentifier>{d5c15132-33e6-4d0a-988a-6058905ad8aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -72,13 +72,13 @@
     <ClInclude Include="sl_e_thread.h">
       <Filter>Header Files\Extern</Filter>
     </ClInclude>
-    <ClInclude Include="sound_lib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dr_flac.h">
       <Filter>Header Files\Format Decoders\Dr Flac</Filter>
     </ClInclude>
     <ClInclude Include="sl_format_flac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
