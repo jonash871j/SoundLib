@@ -3,7 +3,7 @@
 #include "sfh_read_file.h"
 
 #define DR_FLAC_IMPLEMENTATION
-#include "dr_flac.h"
+#include "dr_flac.hpp"
 
 
 namespace SoundLib
