@@ -81,6 +81,12 @@
     <ClInclude Include="dr_flac.hpp">
       <Filter>Header Files\Format Decoders\Dr Flac</Filter>
     </ClInclude>
+    <ClInclude Include="sl_dsound_player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sl_direct_sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl_misc.cpp">
@@ -123,6 +129,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sl_format_flac.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sl_dsound_player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sl_direct_sound.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

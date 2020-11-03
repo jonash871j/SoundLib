@@ -13,6 +13,8 @@
 #define SL_DELETE(object) if (object != nullptr) delete object
 #define SL_CREATE(object) SL_DELETE(object); object 
 
+
+
 namespace SoundLib
 {
 	namespace Extern
@@ -36,6 +38,15 @@ namespace SoundLib
 		typedef class SoundPlayer SoundPlayer;
 		typedef class SoundMixer SoundMixer;
 		typedef class SoundQuality SoundQuality;
+	}
+
+	namespace MMSystem
+	{
+	
+	}
+	namespace DirectSound
+	{
+
 	}
 
 	enum class SL_DLL_OUT WaveType : uint16_t

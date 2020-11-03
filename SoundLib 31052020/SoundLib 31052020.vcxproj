@@ -156,6 +156,8 @@
       <DeploymentContent>false</DeploymentContent>
     </ClInclude>
     <ClInclude Include="sl_def.h" />
+    <ClInclude Include="sl_direct_sound.h" />
+    <ClInclude Include="sl_dsound_player.h" />
     <ClInclude Include="sl_e_thread.h" />
     <ClInclude Include="sl_e_wave_format.h" />
     <ClInclude Include="sl_e_wave_header.h" />
@@ -177,6 +179,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sl_def.cpp" />
+    <ClCompile Include="sl_direct_sound.cpp" />
+    <ClCompile Include="sl_dsound_player.cpp" />
     <ClCompile Include="sl_format.cpp" />
     <ClCompile Include="sl_format_any.cpp" />
     <ClCompile Include="sl_format_flac.cpp" />
