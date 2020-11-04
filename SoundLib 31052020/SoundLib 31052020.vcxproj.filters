@@ -134,5 +134,6 @@
     <ClCompile Include="sl_mms_sound_player.cpp">
       <Filter>SoundLib\MMSystem</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>

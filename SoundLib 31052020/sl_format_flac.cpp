@@ -45,7 +45,12 @@ namespace SoundLib
 	{
 		drflac* data = (drflac*)this->data;
 
-		size_t size = data->totalPCMFrameCount * data->channels * sizeof(int16_t);
+		size_t size = (data->totalPCMFrameCount * data->channels * sizeof(int16_t));
+
+		// This is to avoid to small buffers
+		if (size < sound.GetSoundQuality()->GetSampleRate())
+			size += sound.GetSoundQuality()->GetSampleRate() - size;
+
 		int16_t* pSampleData = (int16_t*)malloc(size);
 		drflac_read_pcm_frames_s16(data, data->totalPCMFrameCount, pSampleData);
 

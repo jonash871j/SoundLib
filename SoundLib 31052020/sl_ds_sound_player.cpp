@@ -153,7 +153,7 @@ namespace DirectSound
 		waveFormat->cbSize = 0;
 
 		bufferDesc->dwSize = sizeof(DSBUFFERDESC);
-		bufferDesc->dwFlags = DSBCAPS_CTRLVOLUME | DSBCAPS_CTRLPAN | DSBCAPS_CTRLFREQUENCY;
+		bufferDesc->dwFlags = DSBCAPS_CTRLVOLUME | DSBCAPS_CTRLPAN | DSBCAPS_CTRLFREQUENCY | DSBCAPS_CTRLFX | DSBCAPS_GLOBALFOCUS;
 		bufferDesc->dwBufferBytes = (DWORD)soundData->GetSize();
 		bufferDesc->dwReserved = 0;
 		bufferDesc->lpwfxFormat = waveFormat;
@@ -168,14 +168,15 @@ namespace DirectSound
 		tempBuffer = nullptr;
 
 		long long int bufferSize = 0;
-		unsigned char* bufferPtr;
+		unsigned char* bufferPtr = nullptr;
 
 		sound->Lock(0, soundData->GetSize(), (void**)&bufferPtr, (DWORD*)&bufferSize, NULL, NULL, 0);
 		memcpy(bufferPtr, soundData->GetBuffer(), soundData->GetSize());
 		sound->Unlock((void*)soundData->GetBuffer(), (DWORD)soundData->GetSize(), NULL, 0);
-		
+
 		Mixer.Update(sound);
 	}
+
 	void SoundPlayer::Change(Format* format)
 	{
 		Change(format->GetSound());
@@ -205,6 +206,7 @@ namespace DirectSound
 		if (!CheckError()) 
 			return;
 
+		sound->Play(0, 0, 0);
 		sound->SetCurrentPosition(0);
 		states = SoundStates::Active;
 	}
@@ -290,6 +292,10 @@ namespace DirectSound
 		DWORD status;
 		sound->GetStatus(&status);
 
+		if ((states == SoundStates::Active) && (status != DSBSTATUS_PLAYING))
+			states = SoundStates::Stopped;
+
 		return states;
 	}
 }}
+

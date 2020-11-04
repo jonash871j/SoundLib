@@ -178,6 +178,7 @@
     <ClInclude Include="sl_sound_quality.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="sl_def.cpp" />
     <ClCompile Include="sl_ds_sound_player.cpp" />
     <ClCompile Include="sl_format.cpp" />

@@ -34,6 +34,11 @@ namespace SoundLib
 	void FormatRaw::ImportBlocks()
 	{
 		size_t size = sfh::FileMisc::GetFileSize(inFile->GetPath());
+
+		// This is to avoid to small buffers
+		if (size < sound.GetSoundQuality()->GetSampleRate())
+			size += sound.GetSoundQuality()->GetSampleRate() - size;
+
 		uint8_t* buffers = (uint8_t*)inFile->ReadBuffer(size);
 		sound.SetBuffer(buffers, size);
 	}

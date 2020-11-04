@@ -35,6 +35,11 @@ namespace SoundLib
 	void FormatWave::ImportBlocks()
 	{
 		uint64_t size = (uint64_t)(header.fileSize - sizeof(WaveHeader));
+
+		// This is to avoid to small buffers
+		if (size < sound.GetSoundQuality()->GetSampleRate())
+			size += sound.GetSoundQuality()->GetSampleRate() - size;
+
 		uint8_t* buffers = (uint8_t*)inFile->ReadBuffer(size);
 		sound.SetBuffer(buffers, size);
 	}
