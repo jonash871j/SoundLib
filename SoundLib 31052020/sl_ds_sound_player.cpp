@@ -288,7 +288,7 @@ namespace DirectSound
 			return SoundStates::Uninitialized;
 
 		DWORD status;
-		sound->GetStatus(&status)
+		sound->GetStatus(&status);
 
 		return states;
 	}
