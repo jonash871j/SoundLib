@@ -1,5 +1,5 @@
 #include "sl_format_flac.h"
-#include "sl_sound.h"
+#include "sl_sound_data.h"
 #include "sfh_read_file.h"
 
 #define DR_FLAC_IMPLEMENTATION

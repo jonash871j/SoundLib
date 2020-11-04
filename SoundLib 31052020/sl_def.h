@@ -14,7 +14,6 @@
 #define SL_CREATE(object) SL_DELETE(object); object 
 
 
-
 namespace SoundLib
 {
 	namespace Extern
@@ -32,21 +31,26 @@ namespace SoundLib
 		typedef class FormatWave FormatWave;
 		typedef class FormatRaw FormatRaw;
 
-		typedef class Sound Sound;
+		typedef class SoundData SoundData;
 		typedef class SoundDevices SoundDevices;
 		typedef class SoundDevice SoundDevice;
-		typedef class SoundPlayer SoundPlayer;
 		typedef class SoundMixer SoundMixer;
 		typedef class SoundQuality SoundQuality;
 	}
 
 	namespace MMSystem
 	{
-	
+		namespace TypePtr
+		{
+			typedef class SoundPlayer SoundPlayer;
+		}
 	}
 	namespace DirectSound
 	{
-
+		namespace TypePtr
+		{
+			typedef class SoundPlayer SoundPlayer;
+		}
 	}
 
 	enum class SL_DLL_OUT WaveType : uint16_t
@@ -79,6 +83,14 @@ namespace SoundLib
 	{
 		Normal,
 		Endless,
+	};
+
+	enum class SL_DLL_OUT SoundStates
+	{
+		Uninitialized,
+		Active,
+		Paused,
+		Stopped,
 	};
 
 	enum class SL_DLL_OUT ErrorCode

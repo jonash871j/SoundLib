@@ -1,6 +1,6 @@
 #pragma once
 #include "sl_def.h"
-#include "sl_sound.h"
+#include "sl_sound_data.h"
 #include "sfh_def.h"
 
 namespace SoundLib
@@ -9,7 +9,7 @@ namespace SoundLib
 	{
 	protected:
 		sfh::ReadFile* inFile = nullptr;
-		Sound sound;
+		SoundData sound;
 
 	public:
 		~Format();
@@ -24,7 +24,7 @@ namespace SoundLib
 
 	public:
 		// Used to get sound
-		Sound* GetSound();
+		SoundData* GetSound();
 
 		// Used to get sound file path
 		const char* GetPath();

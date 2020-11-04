@@ -1,5 +1,5 @@
 #include "sl_format_wave.h"
-#include "sl_sound.h"
+#include "sl_sound_data.h"
 #include "sfh_read_file.h"
 #include "sfh_file_misc.h"
 #include <string>
@@ -34,7 +34,7 @@ namespace SoundLib
 	}
 	void FormatWave::ImportBlocks()
 	{
-		uint64_t size = header.fileSize - sizeof(WaveHeader);
+		uint64_t size = (uint64_t)(header.fileSize - sizeof(WaveHeader));
 		uint8_t* buffers = (uint8_t*)inFile->ReadBuffer(size);
 		sound.SetBuffer(buffers, size);
 	}

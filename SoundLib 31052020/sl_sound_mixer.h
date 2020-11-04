@@ -3,16 +3,14 @@
 
 namespace SoundLib
 {
-	static class SL_DLL_OUT SoundMixer
+	namespace SoundMixer
 	{
-	public:
 		// Used to set volume for both speaker channels
 		static void SetVolume(float volumeLeft, float volumeRight);
 
 		// Used to set the same volume for both speaker channels
 		static void SetVolume(float volume);
 	
-	public:
 		// Used to get volume for both speaker channels
 		static void GetVolume(float& volumeLeft, float& volumeRight);
 
@@ -22,8 +20,7 @@ namespace SoundLib
 		// Used to get volume for right speaker channel
 		static float GetVolumeRight();
 
-	public:
 		// Used to get the state of volume has been set
 		static bool GetIsVolumeSet();
-	}SoundMixer;
+	};
 }

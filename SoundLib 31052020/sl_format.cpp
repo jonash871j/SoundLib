@@ -1,5 +1,5 @@
 #include "sl_format.h"
-#include "sl_sound.h"
+#include "sl_sound_data.h"
 #include "sfh_read_file.h"
 
 #include <vcruntime_exception.h>
@@ -19,7 +19,7 @@ namespace SoundLib
 
 		inFile->Close();
 	}
-	Sound* Format::GetSound()
+	SoundData* Format::GetSound()
 	{
 		return &sound;
 	}
