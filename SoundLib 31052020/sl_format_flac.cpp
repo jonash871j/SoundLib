@@ -32,6 +32,9 @@ namespace SoundLib
 		if (data == NULL)
 			ThrowError(ErrorCode::CorruptedFile, inFile->GetPath());
 
+		if (data->bitsPerSample != 16)
+			ThrowError(ErrorCode::UnsupportedConfiguration, inFile->GetPath(), "bitsPerSample" + data->bitsPerSample);
+
 		// Sets sound quality
 		sound.SetSoundQuality(
 			data->bitsPerSample,

@@ -14,9 +14,10 @@ namespace SoundLib
 
 		switch (errorCode)
 		{
-		case EC::CorruptedFile		: SX("Sound file corrupted, couldn't read: " + P(parameter1));
-		case EC::InvalidExtension	: SX("Invalid file extension on " + P(parameter1) + ", expects " + P(parameter2) + " file");
-		default						: SP("Invalid error code");
+		case EC::CorruptedFile				: SX("Sound file corrupted, couldn't read: " + P(parameter1));
+		case EC::InvalidExtension			: SX("Invalid file extension on " + P(parameter1) + ", expects " + P(parameter2) + " file");
+		case EC::UnsupportedConfiguration	: SX("Unsupported configuration on " + P(parameter1) + ", does not support " + P(parameter2));
+		default								: SP("Invalid error code");
 		}
 	}
 }

@@ -98,6 +98,7 @@ namespace SoundLib
 		None = 0,
 		CorruptedFile,
 		InvalidExtension,
+		UnsupportedConfiguration,
 	};
 
 	void ThrowError(ErrorCode errorCode, us::String parameter1 = "", us::String parameter2 = "");
